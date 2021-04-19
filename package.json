@@ -1,0 +1,23 @@
+{
+  "name": "listadetarefas",
+  "version": "1.0.0",
+  "description": "Lista de tarefas simples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaioMoriUTFPR/listaDeTarefas.git"
+  },
+  "author": "Caio Mori",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CaioMoriUTFPR/listaDeTarefas/issues"
+  },
+  "homepage": "https://github.com/CaioMoriUTFPR/listaDeTarefas#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
