@@ -16,8 +16,7 @@
         </form>
 
         <ul>
-        <li><%= item %></li>
+            <% for (var i = 0; i < itens.length; i++){ %>
+            <li><%= itens[i] %></li>
+            <% } %>
         </ul>
-
-    </body>
-</html>

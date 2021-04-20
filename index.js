@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const porta = 80;
-let item = null;
+const itens = [];
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
@@ -15,11 +15,12 @@ app.get('/', (req, res) => {
   };
   const hoje = new Date();
   const dia = hoje.toLocaleDateString('pt-BR', opcoes);
-  res.render('index', {dia: dia, item: item});
+  res.render('index', {dia: dia, itens: itens});
 });
 
 app.post('/', (req, res) => {
-  item = req.body.item;
+  const item = req.body.item;
+  itens.push(item);
   res.redirect('/');
 });
 
