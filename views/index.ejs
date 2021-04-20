@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lista de tarefas</title>
 </head>
-<body>
-    <h1>Hoje é <%= dia %>!</h1>
-    <form method="POST">
-        <p>Digite a sua lista</p>
-        <input name="item" type="text" placeholder="Digite o nome do item">
-        <button type="submit">Enviar!</button>
-    </form>
-    <ul>
-    <li><%= itens %> </li>
-    </ul>
-</body>
+    <body>
+
+        <h1>Hoje é <%= dia %>!</h1>
+        
+        <form action="/" method="POST">
+            <p>Digite a sua lista</p>
+            <input name="item" type="text" placeholder="Digite o nome do item">
+            <button type="submit">Enviar!</button>
+        </form>
+
+        <ul>
+        <li><%= item %></li>
+        </ul>
+
+    </body>
 </html>
