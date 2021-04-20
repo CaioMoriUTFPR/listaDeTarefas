@@ -9,8 +9,11 @@ app.get('/', (req, res) => {
   const diaAtual = hoje.getDay();
   // eslint-disable-next-line max-len
   const listaDias = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+  // eslint-disable-next-line max-len
+  const listaCores = ['Green', 'Blue', 'Purple', 'Gray', 'Brown', 'Yellow', 'Red'];
   const dia = listaDias[diaAtual];
-  res.render('index', {dia: dia});
+  const corDia = listaCores[diaAtual];
+  res.render('index', {dia: dia, corDia: corDia});
 });
 
 app.listen(porta, () => {
