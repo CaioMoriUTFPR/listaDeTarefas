@@ -5,6 +5,7 @@ const itens = [];
 
 app.set('view engine', 'ejs');
 app.use(urlencoded({extended: true}));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   const opcoes = {
