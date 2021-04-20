@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   'env': {
     'browser': true,
     'commonjs': true,
@@ -9,6 +9,7 @@ module.exports = {
   ],
   'parserOptions': {
     'ecmaVersion': 12,
+    'sourceType': 'module',
   },
   'rules': {
   },

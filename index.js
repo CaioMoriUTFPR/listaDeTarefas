@@ -1,10 +1,11 @@
-const express = require('express');
+import express, {urlencoded} from 'express';
 const app = express();
 const porta = 80;
 const itens = [];
 
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended: true}));
+app.use(urlencoded({extended: true}));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   const opcoes = {
