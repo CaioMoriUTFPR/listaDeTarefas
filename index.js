@@ -1,4 +1,7 @@
 import express, {urlencoded} from 'express';
+import {dia} from './data.js';
+
+const dias = dia();
 const app = express();
 const porta = 80;
 const itensPadrao = [];
@@ -9,16 +12,8 @@ app.use(urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  const opcoes = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-  const hoje = new Date();
-  const dia = hoje.toLocaleDateString('pt-BR', opcoes);
   res.render('lista', {
-    titulo: dia, 
+    titulo: dias, 
     itens: itensPadrao
   });
 });
