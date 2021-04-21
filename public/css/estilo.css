@@ -8,6 +8,15 @@ html {
 h1 {
   color: #fff;
   padding: 10px;
+  font-size: x-large;
+}
+
+h1::first-letter {
+  text-transform: uppercase;
+}
+
+.formatado {
+  text-align: justify;
 }
 
 .caixa {

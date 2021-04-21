@@ -1,7 +1,8 @@
 import express, {urlencoded} from 'express';
 const app = express();
 const porta = 80;
-const itens = [];
+const itensPadrao = [];
+const itensTrabalho = [];
 
 app.set('view engine', 'ejs');
 app.use(urlencoded({extended: true}));
@@ -16,13 +17,33 @@ app.get('/', (req, res) => {
   };
   const hoje = new Date();
   const dia = hoje.toLocaleDateString('pt-BR', opcoes);
-  res.render('index', {dia: dia, itens: itens});
+  res.render('lista', {
+    titulo: dia, 
+    itens: itensPadrao
+  });
+});
+
+app.get('/trabalho', (req, res) => {
+  res.render('trabalho', {
+    titulo: 'Lista de trabalho',
+    itens: itensTrabalho
+  });
 });
 
 app.post('/', (req, res) => {
   const item = req.body.item;
-  itens.push(item);
+  itensPadrao.push(item);
   res.redirect('/');
+});
+
+app.post('/trabalho', (req, res) => {
+  const item = req.body.item;
+  itensTrabalho.push(item);
+  res.redirect('/trabalho')
+});
+
+app.get('/sobre', (req, res) => {
+  res.render('sobre');
 });
 
 app.listen(porta, () => {

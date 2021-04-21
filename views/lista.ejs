@@ -1,0 +1,20 @@
+<%- include('cabecalho') -%>
+
+        <div class="caixa" id="cabecalho">
+            <h1><%= titulo %></h1>
+        </div>
+
+        <div class="caixa">
+            <form action="/" method="POST" class="item">
+                <input name="item" type="text" placeholder="O que deseja fazer hoje?" autocomplete="off">
+                <button type="submit" name="botaoLista">+</button>
+            </form>
+            <% for (var i = 0; i < itens.length; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= itens[i] %></p>
+            </div>
+            <% } %>
+        </div>
+
+<%- include('rodape') -%>
